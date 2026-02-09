@@ -1,0 +1,436 @@
+/* Aspiration Box Styles */
+.aspiration-box {
+    padding: 100px 0;
+    background-color: #f8f9fa;
+}
+
+.aspiration-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.aspiration-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.aspiration-form h3 {
+    color: var(--primary);
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--dark);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-group small {
+    color: var(--gray);
+    font-size: 0.85rem;
+    display: block;
+    margin-top: 5px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    transform: scale(1.2);
+}
+
+#recaptcha-container {
+    margin: 20px 0;
+}
+
+.form-message {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    display: none;
+}
+
+.form-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    display: block;
+}
+
+.form-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    display: block;
+}
+
+.form-message.info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+    display: block;
+}
+
+/* Spinner for submit button */
+.spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Aspiration Info Styles */
+.aspiration-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.aspiration-info h2 {
+    color: var(--primary);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.info-card i {
+    color: var(--primary);
+    font-size: 1.5rem;
+    margin-top: 5px;
+}
+
+.info-card h4 {
+    color: var(--dark);
+    margin-bottom: 5px;
+}
+
+.info-card p {
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+.tracking-box {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    margin-top: 10px;
+}
+
+.tracking-box h4 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.track-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.track-form input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.track-btn {
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.track-btn:hover {
+    background-color: #2e7d32;
+}
+
+#trackingResult {
+    min-height: 50px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+}
+
+/* Recent Aspirations Styles */
+.recent-aspirations {
+    padding: 100px 0;
+    background-color: white;
+}
+
+.aspirations-filter {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 10px 25px;
+    background-color: #f0f7ff;
+    border: 2px solid #e0e0e0;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: var(--gray);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.aspirations-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.aspiration-item {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 25px;
+    border-left: 5px solid var(--primary);
+    transition: var(--transition);
+}
+
+.aspiration-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.aspiration-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.aspiration-category {
+    background-color: var(--primary);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.aspiration-department {
+    color: var(--gray);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.aspiration-content {
+    margin-bottom: 20px;
+}
+
+.aspiration-content p {
+    color: var(--dark);
+    line-height: 1.7;
+}
+
+.aspiration-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid #e0e0e0;
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+.aspiration-author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.author-avatar {
+    width: 35px;
+    height: 35px;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.aspiration-status {
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.status-pending {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.status-process {
+    background-color: #cce5ff;
+    color: #004085;
+}
+
+.status-done {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.load-more {
+    text-align: center;
+}
+
+#loadMoreBtn {
+    background-color: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+#loadMoreBtn:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .aspiration-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .aspirations-list {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .aspiration-box,
+    .recent-aspirations {
+        padding: 80px 0;
+    }
+    
+    .aspirations-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .aspiration-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .aspiration-footer {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 576px) {
+    .aspiration-form {
+        padding: 20px;
+    }
+    
+    .track-form {
+        flex-direction: column;
+    }
+    
+    .track-btn {
+        width: 100%;
+    }
+}
+.department-content h3,
+.list-item-title,
+.aspiration-form h3,
+.aspiration-info h3 {
+    overflow: hidden;
+    text-overflow: ellipsis; /* Menambahkan "..." jika teks terlalu panjang */
+    white-space: nowrap; /* Mencegah pindah baris */
+    max-width: 100%;
+}
+
+/* Atau jika ingin teks bisa pindah baris */
+.department-content h3.multi-line,
+.list-item-title.multi-line {
+    white-space: normal;
+    word-break: break-word;
+    line-height: 1.3;
+}

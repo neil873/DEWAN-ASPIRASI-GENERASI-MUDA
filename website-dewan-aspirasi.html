@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEWAN ASPIRASI GENERASI MUDA - Wadah Aspirasi Pemuda</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+       <link rel="stylesheet" href="aspiration.css">
+    <style>
+        :root {
+            --primary: #1a73e8;
+            --secondary: #0d47a1;
+            --accent: #34a853;
+            --dark: #202124;
+            --light: #f8f9fa;
+            --gray: #5f6368;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            background-color: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .logo-text span {
+            color: var(--accent);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            left: 0;
+            bottom: -5px;
+            transition: var(--transition);
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 150px 0 100px;
+            background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            top: -150px;
+            right: -100px;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            bottom: -100px;
+            left: -50px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            background-color: #2e7d32;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Departments Section */
+        .departments {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .department-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .department-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+        
+        .department-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .department-icon {
+            height: 80px;
+            background-color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .department-content {
+            padding: 30px;
+        }
+        
+        .department-content h3 {
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .department-content p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+        
+        .department-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .department-link:hover {
+            gap: 10px;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background-color: #f0f7ff;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 70px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-column ul li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 50px;
+                transition: var(--transition);
+                gap: 30px;
+            }
+            
+            nav ul.active {
+                left: 0;
+            }
+            
+            .hero {
+                padding: 130px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .department-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* Aspiration Box Section - UPDATE */
+.aspiration-box {
+    padding: 100px 0;
+    background-color: white; /* Background putih */
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.aspiration-container {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.aspiration-form {
+    flex: 1;
+    background-color: #f8f9fa;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.aspiration-form h3 {
+    color: var(--primary);
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.8rem;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--dark);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.required {
+    color: #e53935;
+}
+
+.form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+.btn-submit {
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-submit:hover {
+    background-color: #2e7d32;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(52, 168, 83, 0.3);
+}
+
+.char-counter {
+    color: var(--gray);
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+/* Aspiration Info Box */
+.aspiration-info {
+    flex: 1;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.aspiration-info h3 {
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.info-item i {
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.info-item h4 {
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.info-item p {
+    opacity: 0.9;
+    font-size: 0.95rem;
+}
+
+/* Aspiration List */
+.aspiration-list {
+    background-color: white;
+    margin-top: 60px;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.aspiration-list h3 {
+    color: var(--primary);
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+.list-item {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--primary);
+    transition: var(--transition);
+}
+
+.list-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.list-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.list-item-title {
+    font-weight: 600;
+    color: var(--dark);
+    font-size: 1.1rem;
+}
+
+.list-item-date {
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+.list-item-department {
+    display: inline-block;
+    background-color: rgba(26, 115, 232, 0.1);
+    color: var(--primary);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.list-item-content {
+    color: var(--gray);
+    line-height: 1.6;
+}
+
+/* Success Message */
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    display: none;
+    align-items: center;
+    gap: 15px;
+}
+
+.success-message i {
+    font-size: 1.5rem;
+}
+
+/* Responsive untuk Aspiration Box */
+@media (max-width: 992px) {
+    .aspiration-container {
+        flex-direction: column;
+    }
+    
+    .aspiration-form,
+    .aspiration-info {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .aspiration-box {
+        padding: 80px 0;
+    }
+    
+    .aspiration-form,
+    .aspiration-info,
+    .aspiration-list {
+        padding: 30px;
+    }
+    
+    .form-footer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .btn-submit {
+        width: 100%;
+        justify-content: center;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="logo-text">DEWAN<span>ASPIRASI</span></div>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav>
+                    <ul id="navMenu">
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#departments">Departemen</a></li>
+                        <li><a href="#about">Tentang Kami</a></li>
+                        <li><a href="#contact">Kontak</a></li>
+                        <li><a href="website-media-kreatif.html" class="cta-button">Media Kreatif</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>DEWAN ASPIRASI GENERASI MUDA</h1>
+            <p>Wadah resmi bagi pemuda untuk menyampaikan aspirasi, gagasan, dan inovasi untuk kemajuan bangsa. Bersama kita wujudkan perubahan yang berarti.</p>
+            <a href="#departments" class="cta-button">Jelajahi Departemen</a>
+        </div>
+    </section>
+
+    <!-- Departments Section -->
+<!-- Departments Section -->
+
+<section class="departments" id="departments">
+  
+    <div class="container">
+        <div class="section-title">
+            <h2>Departemen Kami</h2>
+            <p>DEWAN ASPIRASI GENERASI MUDA terdiri dari berbagai departemen yang fokus pada bidang-bidang strategis untuk menampung dan mewujudkan aspirasi pemuda</p>
+        </div>
+        <div class="department-grid">
+           <div class="department-card">
+                <div class="department-icon">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <div class="department-content">
+                    <h3>Aspirasi & Advokasi</h3>
+
+                    <a href="department-detail.html?dept=pengembangan-organisasi" class="department-link">
+    Selengkapnya <i class="fas fa-arrow-right"></i>
+</a>
+                </div>
+            </div>
+            
+        <div class="department-grid">
+            <!-- Departemen berdasarkan screenshot yang baru -->
+            <div class="department-card">
+                <div class="department-icon">
+                    <i class="fas fa-users-cog"></i>
+                </div>
+                <div class="department-content">
+                    <h3>Pengembangan Organisasi</h3>
+                    <a href="#" class="department-link">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <div class="department-card">
+                <div class="department-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <div class="department-content">
+                    <h3>Humas & Kemitraan</h3>
+
+                    <a href="#" class="department-link">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <div class="department-card">
+                <div class="department-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="department-content">
+                    <h3>Pendidikan & Literasi</h3>
+
+                    <a href="#" class="department-link">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <div class="department-card">
+                <div class="department-icon">
+                    <i class="fas fa-camera-retro"></i>
+                </div>
+                <div class="department-content">
+                    <h3>Media Kreatif</h3>
+
+                    <a href="#" class="department-link">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <!-- Tambahkan departemen lainnya dari struktur awal jika masih relevan -->
+            <div class="department-card">
+                <div class="department-icon">
+                    <i class="fas fa-envelope, fas fa-mailbox"></i>
+                </div>
+                <div class="departmeo
+
+      <!-- ... kode sebelumnya tetap ... -->
+      
+    <!-- Aspiration Box Section -->
+    <section class="aspiration-box" id="aspiration">
+        <div class="container">
+            <div class="section-title">
+                <h2>Kotak Aspirasi</h2>
+                <p>Sampaikan aspirasi, keluhan, atau saran Anda secara langsung. Kami akan menindaklanjuti setiap masukan.</p>
+            </div>
+            
+            <div class="aspiration-container">
+                <div class="aspiration-form">
+                    <h3><i class="fas fa-edit"></i> Formulir Aspirasi</h3>
+                    <form id="aspirationForm">
+                        <div class="form-group">
+                            <label for="name">Nama Lengkap *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Nomor WhatsApp</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="department">Departemen Tujuan *</label>
+                            <select id="department" name="department" required>
+                                <option value="">Pilih Departemen</option>
+                                <option value="Aspirasi Politik">Aspirasi Politik</option>
+                                <option value="Pendidikan">Pendidikan</option>
+                                <option value="Kewirausahaan">Kewirausahaan</option>
+                                <option value="Sosial & Lingkungan">Sosial & Lingkungan</option>
+                                <option value="Hukum & Advokasi">Hukum & Advokasi</option>
+                                <option value="Hubungan Antar Lembaga">Hubungan Antar Lembaga</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="category">Kategori *</label>
+                            <select id="category" name="category" required>
+                                <option value="">Pilih Kategori</option>
+                                <option value="Aspirasi">Aspirasi</option>
+                                <option value="Keluhan">Keluhan</option>
+                                <option value="Saran">Saran</option>
+                                <option value="Laporan">Laporan</option>
+                                <option value="Pertanyaan">Pertanyaan</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Isi Aspirasi *</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Tuliskan aspirasi Anda dengan jelas dan lengkap..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="attachment">Lampiran (Opsional)</label>
+                            <input type="file" id="attachment" name="attachment" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx">
+                            <small>Maksimal 5MB. Format: PDF, JPG, PNG, DOC</small>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="anonim" name="anonim">
+                            <label for="anonim">Kirim secara anonim (nama tidak akan ditampilkan)</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="g-recaptcha" id="recaptcha-container"></div>
+                        </div>
+                        
+                        <button type="submit" class="cta-button" id="submitBtn">
+                            <span id="submitText">Kirim Aspirasi</span>
+                            <div class="spinner" id="spinner" style="display: none;"></div>
+                        </button>
+                        
+                        <div id="formMessage" class="form-message"></div>
+                    </form>
+                </div>
+                
+                <div class="aspiration-info">
+                    <h2><i class="fas fa-info-circle"></i> INFORMASI PENTING</h2>
+                    <div class="info-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>Data Terlindungi</h4>
+                        <p>Data pribadi Anda akan dijaga kerahasiaannya sesuai dengan kebijakan privasi kami.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <i class="fas fa-history"></i>
+                        <h4>Proses Cepat</h4>
+                        <p>Aspirasi Anda akan diproses maksimal 3-5 hari kerja dan akan mendapatkan notifikasi.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <i class="fas fa-eye"></i>
+                        <h4>Transparan</h4>
+                        <p>Anda dapat melacak status aspirasi Anda melalui kode tracking yang diberikan.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <i class="fas fa-check-circle"></i>
+                        <h4>Tindak Lanjut</h4>
+                        <p>Setiap aspirasi akan ditindaklanjuti oleh departemen terkait secara serius.</p>
+                    </div>
+                    
+                    <div class="tracking-box">
+                        <h4><i class="fas fa-search"></i> Lacak Aspirasi</h4>
+                        <div class="track-form">
+                            <input type="text" id="trackingCode" placeholder="Masukkan kode tracking">
+                            <button onclick="trackAspiration()" class="track-btn">Lacak</button>
+                        </div>
+                        <div id="trackingResult"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Aspirations Section -->
+    <section class="recent-aspirations" id="aspirations">
+        <div class="container">
+            <div class="section-title">
+                <h2>Aspirasi Terbaru</h2>
+                <p>Beberapa aspirasi yang telah masuk dan ditindaklanjuti oleh DEWAN ASPIRASI GENERASI MUDA</p>
+            </div>
+            
+            <div class="aspirations-filter">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="Aspirasi">Aspirasi</button>
+                <button class="filter-btn" data-filter="Saran">Saran</button>
+                <button class="filter-btn" data-filter="Keluhan">Keluhan</button>
+            </div>
+            
+            <div class="aspirations-list" id="aspirationsList">
+                <!-- Data akan diisi oleh JavaScript -->
+            </div>
+            
+            <div class="load-more">
+                <button class="cta-button" id="loadMoreBtn">Muat Lebih Banyak</button>
+            </div>
+        </div>
+    </section>
+      </div class="about-image">
+                    <!-- Placeholder for image -->
+                    <div style="background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); height: 400px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                        <div style="text-align: center; padding: 20px;">
+                            <i class="fas fa-users" style="font-size: 4rem; margin-bottom: 20px;"></i>
+                            <p>DEWAN ASPIRASI<br>GENERASI MUDA</p>
+                        </div>
+                    </div>
+ </div>
+<section class="aspiration-box" id="aspiration">
+    <div class="container">
+        <div class="section-title">
+            <h2>Kotak Aspirasi</h2>
+            <p>Sampaikan aspirasi, keluhan, atau saran Anda secara langsung. Kami akan menindaklanjuti setiap masukan.</p>
+        </div>
+        
+        <div class="aspiration-container">
+            <div class="aspiration-form">
+                <h3><i class="fas fa-edit"></i> Formulir Aspirasi</h3>
+                <form id="aspirationForm">
+                    <div class="form-group">
+                        <label for="name">Nama Lengkap <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" required placeholder="Masukkan nama lengkap">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="email@contoh.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Nomor WhatsApp</label>
+                        <input type="tel" id="phone" name="phone" placeholder="0812-3456-7890">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="department">Departemen Tujuan <span class="required">*</span></label>
+                        <select id="department" name="department" required>
+                            <option value="">Pilih departemen</option>
+                            <option value="politik">Departemen Aspirasi Politik</option>
+                            <option value="pendidikan">Departemen Pendidikan</option>
+                            <option value="kewirausahaan">Departemen Kewirausahaan</option>
+                            <option value="sosial">Departemen Sosial & Lingkungan</option>
+                            <option value="hukum">Departemen Hukum & Advokasi</option>
+                            <option value="hubungan">Departemen Hubungan Antar Lembaga</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Judul Aspirasi <span class="required">*</span></label>
+                        <input type="text" id="subject" name="subject" required placeholder="Judul singkat aspirasi Anda">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Isi Aspirasi <span class="required">*</span></label>
+                        <textarea id="message" name="message" required placeholder="Tulis aspirasi Anda secara detail..."></textarea>
+                        <div class="char-counter">
+                            <span id="charCount">0</span>/1000 karakter
+                        </div>
+                    </div>
+                    
+                    <div class="form-footer">
+                        <button type="submit" class="btn-submit">
+                            <i class="fas fa-paper-plane"></i> Kirim Aspirasi
+                        </button>
+                        <div class="success-message" id="successMessage">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Terima kasih!</strong> Aspirasi Anda telah berhasil dikirim.
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="aspiration-info">
+                <h3><i class="fas fa-info-circle"></i> Informasi Penting</h3>
+                
+                <div class="info-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <div>
+                        <h4>Keamanan Terjamin</h4>
+                        <p>Data dan identitas Anda akan kami rahasiakan. Kami hanya menggunakan informasi untuk keperluan verifikasi.</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h4>Waktu Respon</h4>
+                        <p>Kami akan membalas aspirasi Anda maksimal dalam 3x24 jam melalui email atau WhatsApp yang Anda berikan.</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fas fa-file-contract"></i>
+                    <div>
+                        <h4>Syarat & Ketentuan</h4>
+                        <p>Aspirasi harus disampaikan dengan sopan dan konstruktif. Kami tidak menerima konten bernada kebencian atau SARA.</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fas fa-chart-line"></i>
+                    <div>
+                        <h4>Follow Up</h4>
+                        <p>Anda akan mendapatkan update perkembangan aspirasi yang telah dikirim melalui akun terdaftar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="aspiration-list">
+            <h3><i class="fas fa-list"></i> Aspirasi Terbaru</h3>
+            
+            <div class="list-item">
+                <div class="list-item-header">
+                    <div class="list-item-title">Perlunya Ruang Kreatif untuk Pemuda</div>
+                    <div class="list-item-date">15 Mei 2024</div>
+                </div>
+                <div class="list-item-department">Departemen Pendidikan</div>
+                <div class="list-item-content">Mengusulkan pembangunan ruang kreatif di setiap kelurahan sebagai wadah pengembangan bakat pemuda.</div>
+            </div>
+            
+            <div class="list-item">
+                <div class="list-item-header">
+                    <div class="list-item-title">Program Pelatihan Digital Marketing</div>
+                    <div class="list-item-date">12 Mei 2024</div>
+                </div>
+                <div class="list-item-department">Departemen Kewirausahaan</div>
+                <div class="list-item-content">Permintaan untuk diadakan pelatihan digital marketing gratis bagi pelaku UMKM muda.</div>
+            </div>
+            
+            <div class="list-item">
+                <div class="list-item-header">
+                    <div class="list-item-title">Revisi Kebijakan Magang</div>
+                    <div class="list-item-date">10 Mei 2024</div>
+                </div>
+                <div class="list-item-department">Departemen Hukum & Advokasi</div>
+                <div class="list-item-content">Aspirasi untuk revisi regulasi magang agar lebih melindungi hak-hak mahasiswa.</div>
+            </div>
+        </div>
+    </div>
+
+</section>
+     <footer id="contact">
+
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>DEWAN ASPIRASI</h3>
+                    <p>Wadah resmi bagi pemuda untuk menyampaikan aspirasi, gagasan, dan inovasi untuk kemajuan bangsa.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Departemen</h3>
+                    <ul>
+                        <li><a href="#">Pengembangan Organisasi</a></li>
+                        <li><a href="#">Humas & Kemitraan</a></li>
+                        <li><a>Pendidikan & Literasi</a></li>
+                        <li><a>Media Kreatif</a></li>
+                        <li><a>Aspirasi & Advokasi</a></li>
+                        <li><a>Aspirasi & Adokasi</a></li>
+                        
+      </footer>
+<!-- Modal untuk Detail Departemen -->
+<div id="departmentModal" class="modal">
+    <div class="modal-overlay" onclick="closeDepartmentModal()"></div>
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeDepartmentModal()">
+            <i class="fas fa-times"></i>
+        </button>
+        <div id="modalDepartmentContent"></div>
+    </div>
+</div>
+</body>
+</html>

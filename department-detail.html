@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Departemen - DEWAN ASPIRASI GENERASI MUDA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a73e8;
+            --secondary: #0d47a1;
+            --accent: #34a853;
+            --dark: #202124;
+            --light: #f8f9fa;
+            --gray: #5f6368;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .dept-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 100px 0 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .dept-header::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            top: -150px;
+            right: -100px;
+        }
+        
+        .dept-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .dept-header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        
+        .dept-tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .breadcrumb {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 10px 20px;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--accent);
+        }
+        
+        /* Content */
+        .dept-content {
+            padding: 80px 0;
+        }
+        
+        .content-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .section-title {
+            color: var(--primary);
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #f0f7ff;
+        }
+        
+        .section-title i {
+            color: var(--accent);
+        }
+        
+        /* Visi Misi */
+        .vision-mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .vision-box, .mission-box {
+            background: #f0f7ff;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid var(--primary);
+        }
+        
+        .mission-list {
+            list-style: none;
+            padding-left: 20px;
+        }
+        
+        .mission-list li {
+            margin-bottom: 15px;
+            padding-left: 10px;
+            position: relative;
+        }
+        
+        .mission-list li::before {
+            content: "▸";
+            color: var(--accent);
+            position: absolute;
+            left: -10px;
+            font-weight: bold;
+        }
+        
+        /* Program */
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .program-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: var(--transition);
+            border: 2px solid #e9ecef;
+        }
+        
+        .program-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .program-icon {
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .program-content {
+            padding: 25px;
+        }
+        
+        .program-content h4 {
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        /* Kontak */
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: #f0f7ff;
+            padding: 20px;
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-5px);
+            background: #e3f2fd;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+        }
+        
+        .instagram-link {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+        
+        .instagram-link:hover {
+            color: #E1306C;
+        }
+        
+        /* Back Button */
+        .back-section {
+            text-align: center;
+            padding: 50px 0;
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .back-button:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .dept-header {
+                padding: 80px 0 40px;
+            }
+            
+            .dept-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .content-section {
+                padding: 25px;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .vision-mission-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .dept-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .dept-icon {
+                font-size: 3rem;
+                width: 80px;
+                height: 80px;
+            }
+            
+            .content-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+  <p>
+    <!-- Header akan diisi oleh JavaScript -->
+    <div class="dept-header" id="deptHeader">
+        <div class="container">
+            <div id="headerContent"></div>
+        </div>
+    </div>
+    
+    <!-- Content akan diisi oleh JavaScript -->
+    <div class="container dept-content" id="deptContent"></div>
+    
+    <!-- Back Button -->
+
+    </div>
+    
+    <script> 
+        // Data Departemen
+        const departments = {
+            'sekretaris-jenderal': {
+                title: 'Sekretaris Jenderal',
+                icon: 'fas fa-user-tie',
+                tagline: 'Pimpinan Tertinggi Eksekutif & Penggerak Utama Organisasi',
+                color: '#1a73e8',
+                description: 'Sekretaris Jenderal merupakan pimpinan tertinggi eksekutif yang bertanggung jawab atas keseluruhan operasional organisasi, koordinasi antar departemen, dan implementasi visi-misi DAGM.',
+                visi: 'Menjadi penggerak utama transformasi organisasi yang efektif, visioner, dan berintegritas',
+                misi: [
+                    'Memimpin dengan prinsip good governance dan akuntabilitas',
+                    'Membangun sistem organisasi yang berkelanjutan dan adaptif',
+                    'Menjalin sinergi strategis antar semua departemen',
+                    'Mewujudkan transparansi dalam setiap pengambilan keputusan',
+                    'Mengembangkan kapasitas kepemimpinan generasi muda'
+                ],
+                fungsi: [
+                    'Memimpin dan mengkoordinasikan seluruh departemen',
+                    'Merumuskan kebijakan strategis organisasi',
+                    'Mengawasi implementasi program kerja nasional',
+                    'Mewakili organisasi dalam forum nasional dan internasional',
+                    'Menjaga hubungan dengan stakeholder eksternal',
+                    'Memastikan akuntabilitas keuangan organisasi',
+                    'Melakukan evaluasi kinerja organisasi secara berkala'
+                ],
+                program: [
+                    { name: 'Rapat Koordinasi Nasional', desc: 'Pertemuan tahunan seluruh pimpinan DAGM', icon: 'fas fa-users' },
+                    { name: 'Leadership Summit', desc: 'Pengembangan kapasitas kepemimpinan', icon: 'fas fa-graduation-cap' },
+                    { name: 'Strategic Planning', desc: 'Penyusunan rencana strategis 5 tahunan', icon: 'fas fa-chess-board' },
+                    { name: 'Executive Meeting', desc: 'Rapat bulanan evaluasi kinerja', icon: 'fas fa-chart-pie' }
+                ],
+                instagram: '@sekjen.dagm'
+            },
+            
+            'pengembangan-organisasi': {
+                title: 'Pengembangan Organisasi',
+                icon: 'fas fa-users-cog',
+                tagline: 'Mengembangkan Sistem, Menumbuhkan Potensi, Membangun Kader',
+                color: '#ff6b6b',
+                description: 'Departemen yang berfokus pada penguatan struktur internal, pengembangan kapasitas anggota, dan sistemisasi organisasi untuk menciptakan lingkungan yang efektif, efisien, dan berkelanjutan.',
+                visi: 'Membangun organisasi yang adaptif, kompeten, dan memiliki sistem yang solid untuk kemajuan generasi muda',
+                misi: [
+                    'Mengembangkan sistem rekrutmen yang transparan dan berkualitas',
+                    'Membangun kapasitas anggota melalui pelatihan berkelanjutan',
+                    'Menciptakan budaya organisasi yang positif dan produktif',
+                    'Mengoptimalkan struktur organisasi untuk efektivitas maksimal',
+                    'Mengelola database anggota dan sistem evaluasi kinerja'
+                ],
+                fungsi: [
+                    'Merancang dan merevisi struktur organisasi',
+                    'Melakukan rekrutmen dan seleksi anggota baru',
+                    'Mengembangkan program pelatihan dan pengembangan anggota',
+                    'Menyusun sistem evaluasi kinerja organisasi',
+                    'Membuat database dan sistem dokumentasi anggota',
+                    'Mengelola sertifikasi dan pengakuan kompetensi',
+                    'Mengembangkan budaya organisasi yang positif'
+                ],
+                program: [
+                    { name: 'Open Recruitment Nasional', desc: 'Rekrutmen massal anggota baru DAGM', icon: 'fas fa-bullhorn' },
+                    { name: 'Leadership Training Camp', desc: 'Pelatihan intensif kepemimpinan', icon: 'fas fa-campground' },
+                    { name: 'Sertifikasi Kompetensi', desc: 'Pengakuan resmi kemampuan anggota', icon: 'fas fa-certificate' },
+                    { name: 'Mentoring Program', desc: 'Pendampingan anggota baru', icon: 'fas fa-hands-helping' }
+                ],
+                instagram: '@porganisasi.dagm'
+            },
+            
+            'humas-kemitraan': {
+                title: 'Humas & Kemitraan',
+                icon: 'fas fa-handshake',
+                tagline: 'Jembatan Komunikasi & Pengembang Jaringan Strategis',
+                color: '#34a853',
+                description: 'Departemen yang mengelola komunikasi eksternal, membangun citra positif organisasi, dan menjalin kemitraan strategis dengan berbagai pihak untuk mendukung pencapaian tujuan organisasi.',
+                visi: 'Menjadi jembatan komunikasi yang efektif dan membangun jaringan kemitraan yang berkelanjutan untuk penguatan organisasi',
+                misi: [
+                    'Membangun citra positif organisasi di masyarakat',
+                    'Mengembangkan jaringan kemitraan strategis dengan berbagai pihak',
+                    'Mengelola komunikasi publik secara profesional dan transparan',
+                    'Menyelenggarakan event yang berdampak luas dan bermakna',
+                    'Mengoptimalkan media sosial untuk perluasan jaringan'
+                ],
+                fungsi: [
+                    'Mengelola media sosial dan website organisasi',
+                    'Membangun relasi dengan media massa',
+                    'Menjalin kerjasama dengan pemerintah, swasta, dan NGO',
+                    'Mengorganisir event dan acara publik',
+                    'Menyusun materi publikasi dan press release',
+                    'Mengelola komunikasi krisis (crisis communication)',
+                    'Mengembangkan program corporate social responsibility (CSR)'
+                ],
+                program: [
+                    { name: 'Media Partnership Program', desc: 'Kerjasama dengan berbagai media', icon: 'fas fa-tv' },
+                    { name: 'Corporate Collaboration', desc: 'Kemitraan dengan perusahaan', icon: 'fas fa-building' },
+                    { name: 'Annual Youth Summit', desc: 'Pertemuan tahunan pemuda nasional', icon: 'fas fa-users' },
+                    { name: 'Community Outreach', desc: 'Program pengabdian masyarakat', icon: 'fas fa-hands-helping' }
+                ],
+                instagram: '@dagm.humas_kemitraan'
+            },
+            
+            'pendidikan-literasi': {
+                title: 'Pendidikan & Literasi',
+                icon: 'fas fa-graduation-cap',
+                tagline: 'Mencerdaskan Generasi, Mengembangkan Literasi Digital',
+                color: '#9c27b0',
+                description: 'Departemen yang berfokus pada peningkatan kapasitas intelektual, pengembangan literasi digital dan informasi, serta penciptaan program pendidikan yang inovatif dan relevan dengan kebutuhan generasi muda.',
+                visi: 'Mewujudkan generasi muda yang literat, kritis, berdaya saing global, dan memiliki kompetensi abad 21',
+                misi: [
+                    'Meningkatkan literasi digital dan informasi secara masif',
+                    'Mengembangkan program pendidikan inovatif dan kontekstual',
+                    'Membangun budaya belajar sepanjang hayat',
+                    'Menciptakan konten edukasi yang relevan dan menarik',
+                    'Melakukan penelitian tentang isu pendidikan pemuda'
+                ],
+                fungsi: [
+                    'Mengembangkan kurikulum pelatihan dan workshop',
+                    'Menyelenggarakan program literasi digital',
+                    'Membuat konten edukasi berbasis digital',
+                    'Mengadakan diskusi ilmiah dan seminar pendidikan',
+                    'Mengembangkan program beasiswa dan pendidikan alternatif',
+                    'Membuat materi pembelajaran kreatif',
+                    'Menjalin kerjasama dengan institusi pendidikan'
+                ],
+                program: [
+                    { name: 'Digital Literacy Bootcamp', desc: 'Pelatihan intensif literasi digital', icon: 'fas fa-laptop-code' },
+                    { name: 'Youth Research Forum', desc: 'Forum penelitian ilmiah pemuda', icon: 'fas fa-flask' },
+                    { name: 'Online Learning Platform', desc: 'Platform belajar daring DAGM', icon: 'fas fa-globe' },
+                    { name: 'Creative Writing Workshop', desc: 'Workshop menulis kreatif', icon: 'fas fa-pen-fancy' }
+                ],
+                instagram: '@pendidikan_literasi_dagm'
+            },
+            
+            'media-kreatif': {
+                title: 'Media Kreatif',
+                icon: 'fas fa-camera-retro',
+                tagline: 'Kreatif, Inspiratif, Informatif - Suara Generasi Muda',
+                color: '#ff9f43',
+                description: 'Departemen yang bertanggung jawab atas produksi konten kreatif, pengelolaan aset digital, dan penyampaian pesan organisasi melalui medium visual dan audiovisual yang menarik dan profesional.',
+                visi: 'Menjadi pusat kreativitas digital yang menghasilkan konten berkualitas, inspiratif, dan berdampak bagi generasi muda',
+                misi: [
+                    'Memproduksi konten kreatif yang inspiratif dan edukatif',
+                    'Mengembangkan brand identity visual yang kuat dan konsisten',
+                    'Mendokumentasikan setiap kegiatan secara profesional',
+                    'Mengoptimalkan media digital untuk komunikasi efektif',
+                    'Mengembangkan keterampilan anggota di bidang media kreatif'
+                ],
+                fungsi: [
+                    'Produksi video dokumentasi dan edukasi',
+                    'Desain grafis untuk publikasi dan media sosial',
+                    'Fotografi acara dan kegiatan organisasi',
+                    'Pengelolaan website dan platform digital',
+                    'Pembuatan konten kreatif (meme, infografis, dll)',
+                    'Editing video dan audio profesional',
+                    'Manajemen konten media sosial'
+                ],
+                program: [
+                    { name: 'Content Creator Academy', desc: 'Sekolah konten kreator DAGM', icon: 'fas fa-film' },
+                    { name: 'Visual Storytelling Workshop', desc: 'Pelatihan storytelling visual', icon: 'fas fa-images' },
+                    { name: 'Digital Portfolio Development', desc: 'Pengembangan portofolio digital', icon: 'fas fa-briefcase' },
+                    { name: 'Social Media Management', desc: 'Manajemen media sosial', icon: 'fas fa-share-alt' }
+          </script>
